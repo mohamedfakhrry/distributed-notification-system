@@ -27,7 +27,6 @@ An event-driven notification system that dispatches notifications across multipl
 - `src/in-app/` — WebSocket gateway for in-app notifications
 - `src/main.ts`
 
-*(placeholder structure — verify folder names against actual project before publishing)*
 
 ## API Endpoints
 *(placeholder route names — verify against actual controllers and correct before publishing)*
@@ -41,6 +40,3 @@ An event-driven notification system that dispatches notifications across multipl
 
 ## Core Logic: Event Flow
 A notification event is published to Kafka on trigger. Each channel (Email/SMS/Push) has its own consumer that processes events relevant to it, checks Redis for a deduplication key before dispatch, and calls the relevant third-party provider. Delivery receipts come back through the webhook receiver and are republished to Kafka for status tracking.
-
-> **Note:** channel services currently run within the same NestJS application as separate modules rather than as independently deployed services — full deployment-level separation (each channel as its own process/container) is a planned next step, not yet implemented.
-
