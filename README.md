@@ -17,7 +17,10 @@ An event-driven notification system that dispatches notifications across multipl
 - **Auth:** JWT
 
 ## Architecture
+<<<<<<< HEAD
 \`\`\`
+=======
+>>>>>>> 59559f60df930fafc54b6e4e75c8fc2729d104d7
 src/
 ├── auth/              # JWT authentication
 ├── notification-core/  # Event ingestion, template resolution
@@ -28,7 +31,10 @@ src/
 ├── webhook-receiver/    # Express.js delivery-receipt ingestion
 ├── in-app/               # WebSocket gateway for in-app notifications
 └── main.ts
+<<<<<<< HEAD
 \`\`\`
+=======
+>>>>>>> 59559f60df930fafc54b6e4e75c8fc2729d104d7
 *(placeholder structure — verify folder names against actual project before publishing)*
 
 ## API Endpoints
@@ -44,4 +50,8 @@ src/
 ## Core Logic: Event Flow
 A notification event is published to Kafka on trigger. Each channel (Email/SMS/Push) has its own consumer that processes events relevant to it, checks Redis for a deduplication key before dispatch, and calls the relevant third-party provider. Delivery receipts come back through the webhook receiver and are republished to Kafka for status tracking.
 
+<<<<<<< HEAD
 > **Note:** channel services currently run within the same NestJS application as separate modules rather than as independently deployed services — full deployment-level separation (each channel as its own process/container) is a planned next step, not yet implemented.
+=======
+> **Note:** channel services currently run within the same NestJS application as separate modules rather than as independently deployed services — full deployment-level separation (each channel as its own process/container) is a planned next step, not yet implemented.
+>>>>>>> 59559f60df930fafc54b6e4e75c8fc2729d104d7
