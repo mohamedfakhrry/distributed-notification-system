@@ -17,7 +17,6 @@ An event-driven notification system that dispatches notifications across multipl
 - **Auth:** JWT
 
 ## Architecture
-\`\`\`
 src/
 ├── auth/              # JWT authentication
 ├── notification-core/  # Event ingestion, template resolution
@@ -28,7 +27,6 @@ src/
 ├── webhook-receiver/    # Express.js delivery-receipt ingestion
 ├── in-app/               # WebSocket gateway for in-app notifications
 └── main.ts
-\`\`\`
 *(placeholder structure — verify folder names against actual project before publishing)*
 
 ## API Endpoints
